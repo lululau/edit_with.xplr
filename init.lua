@@ -19,6 +19,18 @@ local function setup()
           },
         },
 
+        ["b"]= {
+          help = "view with bat",
+          messages = {
+            "PopMode",
+            {
+              BashExec0 = [===[
+                bat "${XPLR_FOCUS_PATH:?}"
+                ]===]
+            }
+          },
+        },
+
         ["e"]= {
           help = "edit with emacs",
           messages = {
