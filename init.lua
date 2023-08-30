@@ -7,7 +7,7 @@ local function setup()
     name = "edit focused file with nvim/emacs/vscode editor",
     key_bindings = {
       on_key = {
-        "c" = {
+        ["c"]= {
           help = "edit with vscode",
           messages = {
             "PopMode",
@@ -18,32 +18,32 @@ local function setup()
             }
           },
         },
-      },
 
-      "e" = {
-        help = "edit with emacs",
-        messages = {
-          "PopMode",
-          {
-            BashExecSilently0 = [===[
-              emacsclient "${XPLR_FOCUS_PATH:?}"
-              ]===]
-          }
+        ["e"]= {
+          help = "edit with emacs",
+          messages = {
+            "PopMode",
+            {
+              BashExecSilently0 = [===[
+                emacsclient "${XPLR_FOCUS_PATH:?}"
+                ]===]
+            }
+          },
         },
-      },
-    },
 
-    "v" = {
-      help = "edit with nvim",
-      messages = {
-        "PopMode",
-        {
-          BashExec0 = [===[
-            nvim "${XPLR_FOCUS_PATH:?}"
-            ]===]
-        }
-      },
-    },
+        ["v"]= {
+          help = "edit with nvim",
+          messages = {
+            "PopMode",
+            {
+              BashExec0 = [===[
+                nvim "${XPLR_FOCUS_PATH:?}"
+                ]===]
+            }
+          },
+        },
+      }
+    }
   }
 
   xplr.config.modes.builtin.default.key_bindings.on_key["e"] = {
