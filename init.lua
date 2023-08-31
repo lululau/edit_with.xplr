@@ -25,7 +25,7 @@ local function setup()
             "PopMode",
             {
               BashExec0 = [===[
-                bat "${XPLR_FOCUS_PATH:?}"
+                bat --pager='less --RAW-CONTROL-CHARS --no-init -R' "${XPLR_FOCUS_PATH:?}"
                 ]===]
             }
           },
