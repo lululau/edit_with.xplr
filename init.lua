@@ -49,7 +49,8 @@ local function setup()
             "PopMode",
             {
               BashExecSilently0 = [===[
-                emacsclient "${XPLR_FOCUS_PATH:?}"
+                open -a Emacs
+                emacsclient -n "${XPLR_FOCUS_PATH:?}"
                 ]===]
             }
           },
