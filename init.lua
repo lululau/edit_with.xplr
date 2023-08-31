@@ -32,7 +32,7 @@ local function setup()
         },
 
         ["d"]= {
-          help = "view with visidata",
+          help = "view with visidata (vd)",
           messages = {
             "PopMode",
             {
