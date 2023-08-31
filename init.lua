@@ -31,6 +31,18 @@ local function setup()
           },
         },
 
+        ["d"]= {
+          help = "view with visidata",
+          messages = {
+            "PopMode",
+            {
+              BashExec0 = [===[
+                vd "${XPLR_FOCUS_PATH:?}"
+                ]===]
+            }
+          },
+        },
+
         ["e"]= {
           help = "edit with emacs",
           messages = {
