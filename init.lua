@@ -3,6 +3,12 @@ local q = xplr.util.shell_quote
 local function setup()
   local xplr = xplr
 
+  xplr.fn.custom.edit_with = {}
+  xplr.fn.custom.edit_with.lnav = function(app)
+    local cmd = "lnav " .. q(app.focused_node.absolute_path)
+    return redir_execute(cmd)
+  end
+
   xplr.config.modes.custom.edit_with = {
     name = "edit focused file with nvim/emacs/vscode editor",
     key_bindings = {
@@ -52,6 +58,16 @@ local function setup()
                 open -a Emacs
                 emacsclient -n "${XPLR_FOCUS_PATH:?}"
                 ]===]
+            }
+          },
+        },
+
+        ["l"]= {
+          help = "view with lnav",
+          messages = {
+            "PopMode",
+            {
+              CallLua = "custom.edit_with.lnav"
             }
           },
         },
